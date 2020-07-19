@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ultimatefirebase/screens/authenticate/register.dart';
+import 'package:ultimatefirebase/screens/authenticate/sign_in.dart';
 import 'package:ultimatefirebase/screens/wrapper.dart';
 import 'package:ultimatefirebase/services/auth.dart';
 
@@ -14,6 +16,10 @@ class MyApp extends StatelessWidget {
     return StreamProvider.value(
       value: AuthService().user,
       child: MaterialApp(
+        routes: {
+          '/register': (context) => Register(),
+          '/signin': (context) => SignIn()
+        },
         title: 'Ultimate Firebase',
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
